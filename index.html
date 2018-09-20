@@ -1,47 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Hangman | Ironhack</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <title>Ahorcado</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700,700i,900i" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 <body>
   <!-- div con el boton de nuevo juego -->
-  <div id="main">
-    <button id="new-game">New game</button>
+  <div class="main">
+    <button class="new-game">New game</button>
   <!-- IDEA: dibujamos al hombre ahorcado -->
-    <div id="hangman">
-      <div class="right-bar"></div>
-      <div class="top-bar"></div>
-      <div class="left-bar"></div>
-      <div class="base"></div>
+    <div class="hangman">
+      <div class="hangman__right-bar"></div>
+      <div class="hangman__top-bar"></div>
+      <div class="hangman__left-bar"></div>
+      <div class="hangman__base"></div>
 
-      <div class="head"></div>
-      <div class="body"></div>
-      <div class="left-arm"></div>
-      <div class="right-arm"></div>
-      <div class="left-leg"></div>
-      <div class="right-leg"></div>
+      <div class="hangman__head"></div>
+      <div class="hangman__body"></div>
+      <div class="hangman__left-arm"></div>
+      <div class="hangman__right-arm"></div>
+      <div class="hangman__left-leg"></div>
+      <div class="hangman__right-leg"></div>
 
       <div class="clearfix"></div>
     </div>
   <!-- IDEA: div con la palabra a descubrir -->
-    <div id="game">
-      <div id="currentWord"></div>
+    <div class="game">
+      <div class="game__currentWord"></div>
     </div>
   <!-- IDEA: contenedor con todas las letras que hemos ido utilizando -->
-    <div id="letters">
+    <div class="letters">
     </div>
   <!-- IDEA: div que se muetra al ganar -->
   <!-- IDEA: escondemos los div que no deben mostrarse al principio con
   la clase hide -->
-    <div id="you-win" class="hide">
+    <div class="you-win you-win-hide">
       <p>Good job, you saved our man!</p>
     </div>
   <!-- IDEA: div que se muestra al perder -->
-    <div id="game-over" class="hide">
+    <div id="game-over you-win-hide">
       <p>Game over!</p>
     </div>
   </div>
