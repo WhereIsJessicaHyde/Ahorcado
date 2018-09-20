@@ -1,34 +1,24 @@
-body,
-input,
-button {
-  font-family: Montserrat;
-  font-size: 16px; }
-
-.hide {
-  display: none; }
-
-.clearfix {
-  clear: both; }
-
 .main {
-  margin: 40px auto;
-  width: 600px; }
-
-.new-game {
-  background: #43a3e6;
-  border: 1px solid #43a3e6;
-    border-radius: 6px;
-  box-shadow: 1px 1px 2px #999;
-  color: #fff;
-  padding: 6px 14px;
-  outline: 0; }
+  margin: 0 auto;
+  width: 300px;
+  padding: 50px 50px 50px 50px;
+  border: solid 10px black;
+    border-radius: 10px 10px 0 0;
+  box-shadow: 0 5px 10px gray; }
 
 .game {
-  margin: 60px auto 0;
+  margin: 60px auto;
   text-align: center; }
   .game__currentWord span {
     display: inline-block;
     margin: 0 10px; }
+
+.letters {
+  color: #999;
+  letter-spacing: 5px;
+  margin: 0 auto;
+  text-align: center;
+  width: 400px; }
 
 .hangman {
   height: 405px;
@@ -63,6 +53,8 @@ button {
   margin-top: -375px;
   height: 50px;
   width: 50px; }
+  .hangman__head div {
+    background-color: #FFF; }
 
 .hangman__body {
   float: left;
@@ -122,13 +114,6 @@ button {
 .hangman-lifes-1 .hangman__right-leg {
   background: #000; }
 
-.letters {
-  color: #999;
-  letter-spacing: 5px;
-  margin: 20px auto 0;
-  text-align: center;
-  width: 400px; }
-
 .you-win,
 .game-over {
   background: #87D892;
@@ -140,6 +125,43 @@ button {
   width: 300px; }
 
 .game-over {
-  background: #F9C3B9;
+  background: rgba(215, 44, 44, 0.8);
   border-color: #8A2512;
   color: #8A2512; }
+
+.footer {
+  margin: 0 auto;
+  width: 300px;
+  padding: 10px 50px;
+  border: solid 10px #000;
+    border-radius: 0 0 10px 10px;
+  box-shadow: 0 5px 10px #999;
+  background-color: rgba(215, 44, 44, 0.8); }
+
+.new-game {
+  background-color: #8A2512;
+  color: #FFF;
+  border: none;
+    border-radius: 4px;
+  padding: 12px 18px;
+  display: block;
+  margin: 0 auto; }
+
+body,
+input,
+button {
+  font-family: Montserrat;
+  font-size: 16px; }
+
+.hide {
+  display: none; }
+
+.clearfix {
+  clear: both; }
+
+h1 {
+  margin: 20px auto;
+  color: rgba(215, 44, 44, 0.8);
+  padding: 0;
+  font-size: 100px;
+  text-align: center; }

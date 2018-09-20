@@ -15,7 +15,7 @@ var _initializeControls = function () {
   document.getElementsByClassName("hangman").classList   = "";
   document.getElementsByClassName("letters").innerHTML   = "";
 };
-
+console.log(document.getElementsByClassName("you-win"))
 //borra el estado actual de la palabra
 var resetCurrentWord = function () {
   // este dom, enlaza la palabra a adivinar con el contenido del
