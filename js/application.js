@@ -88,10 +88,10 @@ var afterRound = function () {
     return;
 
   if(status.toLowerCase() === "you win") {
-    document.querySelector(".you-win").classList = "";
+    document.querySelector(".you-win").classList = "you-win";
   } else {
     drawCurrentWord(hangman.secretWord.split(""));
-    document.querySelector(".game-over").classList = "";
+    document.querySelector(".game-over").classList = "game-over";
   }
 
   hangman = undefined;
@@ -99,4 +99,4 @@ var afterRound = function () {
 // IDEA: este dom hace que al pulsar el boton nuevo juego, se inicie hangman
 document.querySelector(".new-game").addEventListener("click", newGameClick);
 // IDEA: este dom permite insertar letras a traves del teclado
-document.querySelector(".keydown", insertLetter);
+document.addEventListener("keydown", insertLetter);
