@@ -10,29 +10,32 @@ var newGameClick = function () {
 };
 // IDEA: esta funcion reseta el juego a los valores iniciales
 var _initializeControls = function () {
-  document.getElementById("you-win").classList   = "hide";
-  document.getElementById("game-over").classList = "hide";
-  document.getElementById("hangman").classList   = "";
-  document.getElementById("letters").innerHTML   = "";
+  document.getElementsByClassName("you-win").classList   = "hide";
+  document.getElementsByClassName("game-over").classList = "hide";
+  document.getElementsByClassName("hangman").classList   = "";
+  document.getElementsByClassName("letters").innerHTML   = "";
 };
 
 //borra el estado actual de la palabra
 var resetCurrentWord = function () {
   // este dom, enlaza la palabra a adivinar con el contenido del
   // div currentWord
-  var word = document.getElementById("currentWord");
+  var word = document.querySelector(".game__currentWord");
   //borra la palabra dentro de currentWord
   while (word.firstChild) {
     word.removeChild(word.firstChild);
   }
+
 };
+
 //funcion que agrega las letras a nuestra palabra
 var drawCurrentWord = function (word) {
   resetCurrentWord();
 
   var currentWord    = word || hangman.getWordStatus();
   //cambia la variable que enlaca con el div currentWord
-  var currentWordDom = document.getElementById("currentWord");
+  var currentWordDom = document.querySelector(".game__currentWord");
+  console.log(word)
 
   currentWord.forEach(function (letter) {
     //creamos una etiquiqueta span
@@ -44,15 +47,17 @@ var drawCurrentWord = function (word) {
     spanLetter.appendChild(content);
     //añadimos los span a el div currentWord
     currentWordDom.appendChild(spanLetter);
+    console.log(currentWordDom)
   });
 };
+
 //dibujamos una parte del hombre ahorcado por cada fallo
 var drawHangman = function () {
-  document.getElementById("hangman").classList += " lifes-" + (hangman.errorsLeft + 1);
+  document.querySelector(".hangman").classList += " hangman-lifes-" + (hangman.errorsLeft + 1);
 };
 //añadimos las letras utilizadas al div letters
 var _addLetter = function (letter) {
-  document.getElementById("letters").innerHTML += letter;
+  document.querySelector(".letters").innerHTML += letter;
 };
 //funcion para introducir una letra
 var insertLetter = function (event) {
@@ -83,15 +88,15 @@ var afterRound = function () {
     return;
 
   if(status.toLowerCase() === "you win") {
-    document.getElementById("you-win").classList = "";
+    document.querySelector(".you-win").classList = "";
   } else {
     drawCurrentWord(hangman.secretWord.split(""));
-    document.getElementById("game-over").classList = "";
+    document.querySelector(".game-over").classList = "";
   }
 
   hangman = undefined;
 };
 // IDEA: este dom hace que al pulsar el boton nuevo juego, se inicie hangman
-document.getElementById("new-game").addEventListener("click", newGameClick);
+document.querySelector(".new-game").addEventListener("click", newGameClick);
 // IDEA: este dom permite insertar letras a traves del teclado
-document.addEventListener("keydown", insertLetter);
+document.querySelector(".keydown", insertLetter);
