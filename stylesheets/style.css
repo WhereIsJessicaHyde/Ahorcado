@@ -25,7 +25,7 @@
   margin: 0 auto;
   width: 300px; }
   .hangman div {
-    background: #FFF; }
+    background: #CBC2BA; }
 
 .hangman__base {
   height: 2px;
@@ -135,6 +135,7 @@
   padding: 10px 50px;
   border: solid 10px #000;
     border-radius: 0 0 10px 10px;
+    border-top: none;
   box-shadow: 0 5px 10px #999;
   background-color: rgba(215, 44, 44, 0.8); }
 
